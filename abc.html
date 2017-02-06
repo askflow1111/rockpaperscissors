@@ -1,0 +1,186 @@
+<style>
+
+
+
+
+body {
+    background-color: #8fc8bf;
+}
+
+.options {
+    display: inline-block;
+    margin-top: 13%;
+    margin-left: 14%;
+}
+
+
+
+@-webkit-keyframes options {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes options {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@-webkit-keyframes options-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes options-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+.options {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+
+.options:hover,
+.options:focus,
+.options:active {
+  -webkit-animation-name: options-float, options;
+  animation-name: options-float, options;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
+
+
+
+#result {
+    font-weight: bold;
+    position: absolute;
+    left: 30%;
+    font-size: 40px;
+}
+
+
+
+</style>
+
+
+<img src="rock.png" class="options" alt="image" id="rockid">
+<img src="paper.png"  class="options" alt="image" id="paperid">
+
+<img src="sci.png" class="options"  alt="image" id="sciid">
+<div id="result"></div>
+
+
+<script>
+
+// var userChoice = prompt("Do you choose rock, paper or scissors?");
+
+var rockbutton = document.getElementById("rockid");
+rockbutton.onclick = function() {
+  userChoice = "rock";
+  abc();
+};
+var scibutton = document.getElementById("sciid");
+scibutton.onclick = function() {
+  userChoice = "sci";
+  abc();
+};
+
+var paperbutton = document.getElementById("paperid");
+paperbutton.onclick = function() {
+  userChoice = "paper";
+  abc();
+};
+
+function abc() {
+  var computerChoice = Math.random();
+  if (computerChoice < 0.34) {
+    computerChoice = "rock";
+  } else if (computerChoice <= 0.67) {
+    computerChoice = "paper";
+  } else {
+    computerChoice = "sci";
+  }
+
+
+  var compare = function(choice1, choice2) {
+    if (choice1 === choice2) {
+      return "The result is a tie!";
+    } else if (choice1 === "rock") {
+      if (choice2 === "sci") {
+        return "rock wins"
+      } else {
+        return "paper wins"
+      }
+    } else if (choice1 === "paper") {
+      if (choice2 === "rock") {
+        return "paper wins"
+      } else {
+        return "scissors wins"
+      }
+    } else {
+      if (choice2 === "rock") {
+        return "rock wins"
+      } else {
+        return "scissors wins"
+      }
+    }
+  };
+
+
+
+
+  showText(compare(userChoice, computerChoice) + " " + "-- Computer chose: " + computerChoice);
+
+
+
+};
+
+
+function showText(text) {
+  document.getElementById("result").innerText = text;
+}
+
+</script>
+
+
+
+
+
+
