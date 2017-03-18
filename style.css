@@ -1,0 +1,61 @@
+
+    body {
+        background: #eeeeee;
+    }
+    
+    .button:hover {
+        box-shadow: 0px 3px 32px -4px rgba(0, 0, 0, 0.75);
+        border-color: #3d3d3e;
+    }
+    
+    .button:active {
+        background: black;
+    }
+    
+    .abc {
+        box-shadow: 0px 3px 32px -4px rgba(0, 0, 0, 0.75);
+        border-color: #3d3d3e;
+        background: black !important;
+    }
+    
+    .box {
+        width: 385px;
+        height: 415px;
+        background: url(images/back.png);
+        border-radius: 10px;
+        border-color: #8c8c8c;
+        border-width: 6px;
+        border-style: outset;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 12px;
+        padding-top: 7px;
+        margin-top: 120px;
+    }
+    
+    .textbox {
+        position: absolute;
+        height: 60px;
+        border-radius: 15px;
+        padding: 10px;
+        width: 265px;
+        top: 144px;
+        font-size: 30px;
+    }
+    
+    .button {
+        padding: 20px;
+        font-size: 30px;
+        margin: 10px;
+        width: 70px;
+        height: 60px;
+        border-radius: 10px;
+        background: #3d3d3e;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 19px;
+        outline: none;
+    }
